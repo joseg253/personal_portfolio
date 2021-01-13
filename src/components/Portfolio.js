@@ -29,7 +29,7 @@ const Portfolio = () => {
          description="Built my personal website with React, Javascript, HTML, and
          CSS. Material ui was used for some stlying and React router
          for handling page changes. Deployed the website with firebase."
-         github_link="https://github.com/joseg253/Portfolio"
+         github_link="https://github.com/joseg253/personal_portfolio"
          demo_link="https://jgarcia-portfolio.web.app/"
         >
         </Project>
