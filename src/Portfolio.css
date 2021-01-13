@@ -1,0 +1,7 @@
+.grid__item {
+  padding-bottom: 10px;
+}
+.grid__container {
+  justify-content: center;
+  align-items: center;
+}
