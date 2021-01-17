@@ -9,23 +9,32 @@ import Avatar from "@material-ui/core/Avatar";
 import Education from "./education";
 import Experience from "./experience";
 import Skills from "./skills";
-import Container from '@material-ui/core/Container';
+import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
+  container: { paddingTop: "5px" },
   grid: {
+    boxShadow: "0px 10px 33px 0px rgba(0, 0, 0, 0.75)",
+    boxSizing: "border-box",
     width: "100%",
-    background: "#27221F",
   },
-  rightColumn: {
-    paddingTop: "2rem",
+  rightPaper: {
     background: "#27221F",
     color: "white",
-    height:"100%"
+    height: "100%",
+    paddingRight: ".5rem",
+    paddingLeft: ".5rem",
+    paddingTop: ".5rem",
   },
+  rightGrid: {},
   leftColumn: {
-    
-    height:"100%"
-   
+    height: "50%",
+    paddingLeft: ".5rem",
+    paddingRight: "5rem",
+  },
+  leftPaper: {
+    background: "#e8e8e8",
+    paddingRight: ".25rem",
   },
 }));
 
@@ -40,6 +49,8 @@ const Resume = () => {
         width: width,
         textAlign: "left",
         margin: "0",
+        border: "none",
+        boxShadow: "0px 10px 33px 0px rgba(0, 0, 0, 0.75)",
       }}
     />
   );
@@ -47,25 +58,38 @@ const Resume = () => {
   return (
     <>
       <NavBar />
-      <div>
-        <Grid container direction="row" justify="center" spacing={1}>
-          <Grid item sm style={{paddingLeft:".5rem", paddingRight:".25rem", paddingTop:".5rem"}}>
-            <Paper className={classes.leftColumn}>
-              <div style={{ textAlign: "right", display: "block" }}>
+      <Container fixed className={classes.container}>
+        <Grid
+          className={classes.grid}
+          container
+          direction="row"
+          justify="center"
+          spacing={1}
+        >
+          <Grid item sm={12} md={3} className={classes.leftColumn}>
+            <Paper className={classes.leftPaper}>
+              <div
+                style={{
+                  textAlign: "right",
+                  display: "block",
+                  paddingLeft: ".5rem",
+                  paddingTop: ".5rem",
+                }}
+              >
                 <Avatar
                   alt="Jose Garcia"
                   src={avatar}
                   style={{
-                    height: "200px",
-                    width: "200px",
+                    height: "175px",
+                    width: "175px",
                   }}
                 />
               </div>
 
-              <div style={{ paddingLeft: ".5rem"}}>
+              <div style={{ paddingLeft: ".5rem" }}>
                 <h2 style={{ paddingTop: "2rem" }}>Jose Garcia</h2>
                 <h4 style={{ color: "grey" }}>Programmer </h4>
-                <ColoredLine color="red" width="50%" />
+                <ColoredLine color="#bf0606" width="50%" />
                 <p>
                   I began my programming journey at Eastern Washington
                   University. I started off really enjoying math and the
@@ -76,7 +100,7 @@ const Resume = () => {
                   and that's something keeps me motivated and excited to keep
                   learning.
                 </p>
-                <ColoredLine color="red" width="50%" />
+                <ColoredLine color="#bf0606" width="50%" />
                 <h5>Address</h5>
                 <p>811 Haskell Ct. DuPont, WA 98327</p>
                 <h5>Phone</h5>
@@ -85,51 +109,50 @@ const Resume = () => {
                 <p>joseg253@yahoo.com</p>
                 <h5>Website</h5>
                 <p>https://jgarcia-portfolio.web.app/</p>
-                <ColoredLine color="red" width="50%" />
+                <ColoredLine color="#bf0606" width="50%" />
               </div>
             </Paper>
           </Grid>
-          <Grid item sm style={{paddingRight:".5rem", paddingLeft:".25rem", paddingTop:".5rem"}}>
-            <Paper className={classes.rightColumn}>
+          <Grid item sm={12} md={9} className={classes.rightGrid}>
+            <Paper className={classes.rightPaper}>
               <h2>Education</h2>
               <Education
                 year="June 2020"
                 schoolName="Eastern Washington University, Cheney, WA"
                 degreeInfo="Bachelor of Science in Computer Science GPA: 3.32/4.0"
               />
-              <ColoredLine color="red" />
+              <ColoredLine color="#bf0606" />
               <h2>Experience</h2>
               <Experience
                 year="Summer 2014 and Summer 2015"
                 jobName="Construction Laborer"
                 companyName="Gary Merlino Construction, Seattle, WA"
-                jobDescription="Worked in team,
-              communicated excellent in loud work environments, and
-              coordinated daily tasks with team
+                jobDescription="Laborer working with various trade disciplines on various construction job sites.
+                Communication key in loud work environments to ensure safety.
+                Team lead and coordinator for daily tasks.
             "
               />
               <Experience
                 year="Summer 2017"
                 jobName="Security"
                 companyName="Crowd Mangement Services, Seattle, WA"
-                jobDescription="Coordinated, monitored, and communicated with multiple guests.
-                Communicated with team"
+                jobDescription="Event security staff and crowd control at large events which included coordinating, monitoring and communicating with event guests.
+                Security team coordination and communication."
               />
-              <ColoredLine color="red" />
+              <ColoredLine color="#bf0606" />
 
               <h2>Skills</h2>
-              <Skills skill="Java" value={80} />
-              <Skills skill="JavaScript" value={65} />
-              <Skills skill="React" value={65} />
+              <Skills skill="Java" value={83} />
+              <Skills skill="JavaScript" value={78} />
+              <Skills skill="React" value={70} />
               <Skills skill="SQL" value={70} />
-              <Skills skill="HTML/CSS" value={60} />
+              <Skills skill="HTML/CSS" value={65} />
               <Skills skill="C#" value={60} />
               <Skills skill="Python" value={50} />
-              
             </Paper>
           </Grid>
         </Grid>
-      </div>
+      </Container>
     </>
   );
 };

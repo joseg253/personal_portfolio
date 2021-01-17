@@ -1,13 +1,11 @@
-import React, { Component, useState, useEffect } from "react";
-import { makeStyles, withStyles } from "@material-ui/core";
+import React from "react";
+import { makeStyles } from "@material-ui/core";
 import {
   BottomNavigation,
   BottomNavigationAction,
   Button,
 } from "@material-ui/core";
-import LinkedIn from "@material-ui/icons/LinkedIn";
 import GitHub from "@material-ui/icons/GitHub";
-import { BrowserRouter, Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -24,10 +22,6 @@ const useStyles = makeStyles({
     },
   },
 });
-
-const handlePageChange2 = () => {
-  window.location.href = "https://github.com/joseg253";
-};
 
 const Footer = () => {
   const classes = useStyles();

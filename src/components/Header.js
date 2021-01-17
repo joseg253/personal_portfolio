@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(15),
     height: theme.spacing(15),
     margin: theme.spacing(1),
+    alignItems: "center",
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   title: {
     color: "tomato",
@@ -41,14 +45,9 @@ const Header = () => {
         <Typed strings={["Jose Garcia"]} typeSpeed={40} />
       </Typography>
       <br />
-      <Typography variant="h5">
+      <Typography variant="h5" style={{}}>
         <Typed
-          strings={[
-            "CS Major",
-            "EWU Alumni",
-            "Web Design",
-            "Full Stack",
-          ]}
+          strings={["CS Major", "EWU Alumni", "Web Design", "Full Stack"]}
           typeSpeed={40}
           backSpeed={60}
           loop

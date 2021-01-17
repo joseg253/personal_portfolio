@@ -3,8 +3,7 @@ body {
   -webkit-background: cover;
   -moz-background: cover;
   -o-background: cover;
-  background: cover;
-  padding-bottom: 20px;
+  background-size: cover;
 }
 
 #footer .content p {
